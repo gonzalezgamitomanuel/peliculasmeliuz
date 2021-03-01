@@ -1,0 +1,59 @@
+table {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+th.pos {
+  text-align: right;
+}
+
+table,
+th,
+td {
+  border: 2px solid rgb(37, 4, 182);
+  border-collapse: collapse;
+}
+
+th {
+  background-color: rgb(147, 223, 241);
+  color: rgb(2, 25, 155);
+}
+
+td {
+  background-color: rgb(223, 239, 247);
+}
+
+a {
+  background-color: rgb(240, 132, 204);
+  text-decoration: underline;
+  color: rgb(48, 0, 179);
+}
+
+a:hover {
+  background-color: rgb(146, 236, 236);
+}
+
+input {
+  background-color: rgb(253, 173, 242);
+  border-radius: 8px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  border-color: rgb(100, 2, 84);
+  border-width: 4px;
+  border-collapse: separate;
+}
+
+button {
+  background-color: rgb(238, 184, 226);
+  font-size: 20px;
+  border-radius: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  border-color: rgb(48, 1, 36);
+  border-width: 3px;
+  border-collapse: separate;
+}
+
+button:hover {
+  background-color: rgb(146, 236, 236);
+}

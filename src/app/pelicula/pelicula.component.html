@@ -1,0 +1,92 @@
+<div *ngIf="pelicula != undefined">
+	<h1>{{pelicula.nombre}}</h1>
+
+	<table>
+		<tr>
+			<th colspan="2">Editar datos pelicula</th>
+		</tr>
+		<tr>
+			<th>Recaudacion Entrada:</th>
+			<th><input #peliculaRecauentrada placeholder="{{pelicula.recauentrada}}" /></th>
+		</tr>
+		<tr>
+			<th>Dias emitida:</th>
+			<th><input #peliculaNumdias placeholder="{{pelicula.numdias}}" /></th>
+		</tr>
+		<tr>
+			<th>Ganado por actor:</th>
+			<th><input #peliculaSueldoactor placeholder="{{pelicula.sueldoactor}}" /></th>
+		</tr>
+		<tr>
+			<th>Numero de actores:</th>
+			<th><input #peliculaNumeroactores placeholder="{{pelicula.numeroactores}}" /></th>
+		</tr>
+		<tr>
+			<th><button (click)="goBack()">Volver</button></th>
+			<th><button (click)="save(peliculaRecauentrada.value, peliculaNumdias.value, peliculaSueldoactor.value, peliculaNumeroactores.value)">Guardar</button>
+			</th>
+		</tr>
+	</table>
+	<br><br><br>
+	<table>
+		<tr>
+			<th colspan="10">Actores de {{pelicula.nombre}}</th>
+		</tr>
+		<tr>
+			<th>Codigo</th>
+			<th>Nombre</th>
+			<th>Peliculas Realizadas</th>
+			<th>Tiempo en Pantalla</th>
+			<th>Veces Protagonista</th>
+			<th>Veces Antagonista</th>
+			<th>Eliminar actor</th>
+		</tr>
+		<tr *ngFor="let a of pelicula.actores">
+			<td>{{a.codigo}}</td>
+			<td><a routerLink="/actor/{{a.codigo}}&{{a.pelicula}}">{{a.nombre}}</a></td>
+			<td>{{a.peliculasRealizadas}}</td>
+			<td>{{a.tiempoPantalla}}</td>
+			<td>{{a.vecesProtagonista}}</td>
+			<td>{{a.vecesAntagonista}}</td>
+			<td><button (click)="delete(a)">X</button></td>
+		</tr>
+	</table>
+
+	<br><br>
+	<b>Agregar nuevo actor a la pelicula: {{pelicula.nombre}}</b>
+	<br><br>
+	<table>
+		<tr>
+			<th class="">Codigo:</th>
+			<th><input #actorCodigo /></th>
+		</tr>
+		<tr>
+			<th class="">Nombre:</th>
+			<th><input #actorNombre /></th>
+		</tr>
+		<tr>
+			<th class="">Peliculas Realizadas:</th>
+			<th><input #actorPeliculasR /></th>
+		</tr>
+		<tr>
+			<th class="">Tiempo en pantalla:</th>
+			<th><input #actorTiempoP /></th>
+		</tr>
+		<tr>
+			<th class="">Veces Protagonista:</th>
+			<th><input #actorVecesP /></th>
+		</tr>
+		<tr>
+			<th class="">Veces Antagonista:</th>
+			<th><input #actorVecesA /></th>
+		</tr>
+		<tr>
+			<th colspan="2">
+				<button
+        (click)="add(actorCodigo.value, actorNombre.value, actorPeliculasR.value,  actorTiempoP.value, actorVecesP.value, actorVecesA.value); actorCodigo.value=''; actorNombre.value=''; actorPeliculasR.value=''; actorTiempoP.value=''; actorVecesP.value=''; actorVecesA.value=''"
+      >
+      AGREGAR
+      </button>
+			</th>
+		</tr>
+	</table>

@@ -1,0 +1,29 @@
+<div *ngIf="actor != undefined">
+<h2>Editar Actor: {{actor.nombre}} </h2>
+<table>
+	<tr>
+		<th>Nombre:</th>
+		<th><input #actorNombre placeholder="{{actor.nombre}}"  /></th>
+	</tr>
+	<tr>
+		<th>Peliculas Realizadas:</th>
+		<th><input #actorPeliculasR placeholder="{{actor.peliculasRealizadas}}"  /></th>
+	</tr>
+	<tr>
+		<th>Tiempo en Pantalla:</th>
+		<th><input #actorTiempoP placeholder="{{actor.tiempoPantalla}}"  /></th>
+	</tr>
+	<tr>
+		<th>Veces Protagonista:</th>
+		<th><input #actorVecesP placeholder="{{actor.vecesProtagonista}}" /></th>
+	</tr>
+	<tr>
+		<th>Veces Antagonista:</th>
+		<th><input #actorVecesA placeholder="{{actor.vecesAntagonista}}" /></th>
+	</tr>
+	<tr>
+		<th><button (click)="goBack()">Volver</button></th>
+		<th><button (click)="save(actorNombre.value, actorPeliculasR.value, actorTiempoP.value, actorVecesP.value, actorVecesA.value )">Guardar</button>
+		</th>
+	</tr>
+</table>

@@ -1,0 +1,63 @@
+<br>
+<p>LISTADO DE PELICULAS EMITIDAS</p>
+<br>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>NOMBRE</th>
+		<th>Ganancias pelicula</th>
+		<th>Recaudacion por entrada</th>
+		<th>Dias emitida</th>
+		<th>Sueldo por actor</th>
+		<th>Numero actores</th>
+    <th>Total pagado a actores</th>
+	</tr>
+	<tr *ngFor="let pelicula of peliculas">
+		<td>{{pelicula.id}}</td>
+		<td><a routerLink="/pelicula/{{pelicula.id}}">{{pelicula.nombre}}</a></td>
+		<td>{{pelicula.ganado}}</td>
+		<td>{{pelicula.recauentrada}}</td>
+		<td>{{pelicula.numdias}}</td>
+		<td>{{pelicula.sueldoactor}}</td>
+		<td>{{pelicula.numeroactores}}</td>
+    <td>{{pelicula.costactores}}</td>
+	</tr>
+</table>
+
+<br><br><br><br>
+<table>
+	<tr>
+		<td colspan="3"><b>Agregar nueva pelicula</b></td>
+	</tr>
+	<tr>
+		<th class="">ID:</th>
+		<th><input #peliId /></th>
+	</tr>
+	<tr>
+		<th class="">Nombre:</th>
+		<th><input #peliNombre /></th>
+	</tr>
+	<tr>
+		<th class="">Recaudacion por Entrada:</th>
+		<th><input #peliRecauentrada /></th>
+	</tr>
+	<tr>
+		<th class="">Numero de dias emitida:</th>
+		<th><input #peliNumdias /></th>
+	</tr>
+	<tr>
+		<th class="">Sueldo por actor:</th>
+		<th><input #peliSueldoactor /></th>
+	</tr>
+	<tr>
+		<th class="">Numero de actores:</th>
+		<th><input #peliNumeroactores /></th>
+	</tr>
+	<tr>
+		<th><button
+    (click)="add(peliId.value, peliNombre.value, peliRecauentrada.value, peliNumdias.value, peliSueldoactor.value, peliNumeroactores.value ); peliId.value=''; peliNombre.value=''; peliRecauentrada.value=''; peliNumdias.value=''; peliSueldoactor.value=''; peliNumeroactores.value=''"
+  >
+    AGREGAR
+  </button></th>
+	</tr>
+</table>
